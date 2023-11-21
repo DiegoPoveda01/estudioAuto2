@@ -14,7 +14,7 @@ import org.jooq.DSLContext;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "registroAutoServlet", value = "/registroUsuario")
+@WebServlet(name = "registroAutoServlet", value = "/registroAuto")
 public class RegistroAutoServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
@@ -28,7 +28,7 @@ public class RegistroAutoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //La respuesta que le vamos a devolver, va a ser la dirección del archivo JSP registroUsuario.jsp
-        RequestDispatcher respuesta = req.getRequestDispatcher("/registroUsuario.jsp");
+        RequestDispatcher respuesta = req.getRequestDispatcher("/registroAuto.jsp");
         //envía la respuesta
         respuesta.forward(req,resp);
     }
