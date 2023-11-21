@@ -1,15 +1,18 @@
 package com.example.automotora.modelo;
 
-public class auto {
+public class Auto {
     private String marca;
     private String patente;
-    private int año;
+    private int anio;
 
     // Constructor
-    public auto(String marca, String patente, int año) {
+    public Auto(String marca, String patente, int anio) {
         this.marca = marca;
         this.patente = patente;
-        this.año = año;
+        this.anio = anio;
+    }
+
+    public Auto(String patente, String patente1, String s, String s1) {
     }
 
     // Métodos getter y setter para marca
@@ -32,11 +35,11 @@ public class auto {
 
     // Métodos getter y setter para año
     public int getAño() {
-        return año;
+        return anio;
     }
 
     public void setAño(int año) {
-        this.año = año;
+        this.anio = año;
     }
 
     // Puedes agregar otros métodos según las necesidades de tu aplicación
@@ -46,7 +49,11 @@ public class auto {
         return "Auto{" +
                 "marca='" + marca + '\'' +
                 ", patente='" + patente + '\'' +
-                ", año=" + año +
+                ", año=" + anio +
                 '}';
+    }
+
+    public boolean EliminarAuto() {
+        return false;
     }
 }
