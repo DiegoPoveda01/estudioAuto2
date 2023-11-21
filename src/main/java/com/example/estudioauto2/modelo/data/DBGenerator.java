@@ -37,7 +37,7 @@ public class DBGenerator {
     }
 
     private static void crearTablaAuto(DSLContext create){
-        create.createTableIfNotExists("Usuario").column("marca",VARCHAR(50))
+        create.createTableIfNotExists("Auto").column("marca",VARCHAR(50))
                 .column("patente",VARCHAR(100))
                 .column("año",INTEGER)
                 .constraint(primaryKey("patente")).execute();
