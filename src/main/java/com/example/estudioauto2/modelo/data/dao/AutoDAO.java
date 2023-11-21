@@ -24,17 +24,17 @@ public class AutoDAO {
     }
     public static List obtenerAuto(DSLContext query, String columnaTabla, Object dato){
         Result resultados = query.select().from(DSL.table("Auto")).where(DSL.field(columnaTabla).eq(dato)).fetch();
-        return obtenerListaEstudiantes(resultados);
+        return obtenerListaAutos(resultados);
     }
     public static List obtenerAutos(DSLContext query){
         Result resultados = query.select().from(DSL.table("Auto")).fetch();
-        return obtenerListaEstudiantes(resultados);
+        return obtenerListaAutos(resultados);
     }
     public static void eliminarAuto(DSLContext query, String patente){
         Table tablaAuto= table(name("Auto"));
         query.delete(DSL.table("Auto")).where(DSL.field("patente").eq(patente)).execute();
     }
-    private static List obtenerListaEstudiantes(Result resultados){
+    private static List obtenerListaAutos(Result resultados){
         List<Auto> autos= new ArrayList<>();
         for(int fila=0; fila<resultados.size();fila++){
             String marca = (String) resultados.getValue(fila,"marca");
